@@ -4,7 +4,7 @@ require 'phpmailer/class.smtp.php';
 
 /*
 
-全局配置示例：
+全局配置示例：(参见conf.user.template.php)
 
 	$g_smtp_host = 'ssl://smtp.qiye.aliyun.com'; // 'smtp.oliveche.com'
 	$g_smtp_port = 465; // 25
@@ -15,12 +15,11 @@ require 'phpmailer/class.smtp.php';
 
 交互接口：
 
-	sendMail(type, id)  -- 须根据业务需求修改。在api_functions.php中定义。
-	Mailer.test() -- 仅用于测试
+	sendMail(type, id)  -- 须根据业务需求修改。在api_functions.php中定义。type="test"时用于测试。
 
 内部接口：
 
-	AC_Mailer::sendMail($to, $subject, $content)
+	JDMailer::sendMail($to, $subject, $content)
 
 */
 
