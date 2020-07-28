@@ -28,7 +28,7 @@ function api_sendMail()
 			]
 		], true);
 
-		$to = queryOne("SELECT group_concat(email) FROM Employee WHERE find_in_set(perms, 'qmgr')");
+		$to = queryOne("SELECT group_concat(email) FROM Employee WHERE find_in_set('qmgr', perms)");
 		// return [$to, $subject, $content];
 		JDMailer::sendMail($to, $subject, $content);
 	}

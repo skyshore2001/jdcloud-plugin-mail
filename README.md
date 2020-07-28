@@ -17,6 +17,16 @@
 
 	JDMailer::sendMail($to, $subject, $content)
 
+测试发送：
+
+	curl -i "http://localhost/pdi/api.php/sendMail?type=test&id=1"	
+
+可检查日志trace.log。
+
+若要详细调试信息，可在conf.user.php中开启：
+
+	$g_smtp_debug = 1;
+
 ## 用法
 
 ### 安装插件jdcloud-plugin-mail
@@ -33,7 +43,7 @@
 
 ### 后端实现
 
-后端去修改`api_objects.php`文件中的`api_sendMail`接口，实现业务逻辑（其中包含快速测试接口）。
+后端去修改`api_functions.php`文件中的`api_sendMail`接口，实现业务逻辑（其中包含快速测试接口）。
 
 系统配置：将conf.user.template.php中的示例配置项，复制到conf.user.php中并修改即可。
 
